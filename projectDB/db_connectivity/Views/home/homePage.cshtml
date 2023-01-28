@@ -1,0 +1,217 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+@using db_connectivity.Models;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>homePage</title>
+</head>
+<body>
+
+    <style>
+        body {
+            background-image: url("https://scontent.flhe7-1.fna.fbcdn.net/v/t1.0-9/97947229_669669167210857_2303460092638396416_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_ohc=BNp7hryRgQ0AX_RkdQK&_nc_ht=scontent.flhe7-1.fna&oh=0ca9bc3db5c0076dc2f9f29b777a0dad&oe=5EE3D5F9");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 300px;
+        }
+    </style>
+    </br>
+
+    <div>
+
+        <div style="margin-left:15%;margin-top:0%;padding-left:30px;width:100%">
+            <table>
+                <tr>
+
+
+                    <td>
+                        <form method="post" action="../Home/authenticate2">
+                            <name:s style="color:blue"></name:s>
+                            <input style="background-color: white; border: none; color: black; border-color: blue; padding: 4px 8px; background-image: url('searchicon.png'); text-decoration: none; margin: 2px 1px; cursor: pointer; " placeholder="Search" id="name" name="name" />
+                            <input style="background-color: blue; border: none; color: white; padding: 4px 8px; text-decoration: none;  margin: 2px 1px; cursor: pointer" type="submit" value="Search" />
+                        </form>
+                    </td>
+                    <td>
+                        &nbsp
+                    </td>
+                    <td>
+                        <form method="post" action="../Home/homere">
+                            <input style="background-color: blue; border: none; color: white; padding: 4px 8px; text-decoration: none;  margin: 2px 1px; cursor: pointer" type="submit" value="Home" />
+                        </form>
+                    </td>
+
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                    @foreach (User user in ViewBag.User ?? new List<User>())
+                    {
+
+                        <td>
+
+                            <form method="post" action="../Home/userDetail">
+                                <NA: style="color:black; font-family:verdana;  font-size:200%;">
+
+                                    <label> @user.name </label>
+                                </NA:>
+
+
+                                <NA: style="color:white; font-family:verdana;  font-size:200%;">
+                                    <input type="image" img src=@user.pic alt="Submit" height="50" width="50">
+                                </NA:>
+                            </form>
+
+                        </td>
+                    }
+
+
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+    <div>
+
+        <div style="margin-left:2%;margin-top:2%;padding-left:2px;width:100%">
+            <NA: style="color:black; font-family:verdana;  font-size:100%;">
+                <label>SUGGSETIONS</label>
+            </NA:></br>
+
+
+
+
+            <table>
+                <tr>
+                    @foreach (Movie Mov in ViewBag.Movie ?? new List<Movie>())
+                    {
+
+
+                        <td>
+                            <form method="post" action="../Home/MovieDetail">
+
+
+                                <button type="submit" id='id' name='id' value=@Mov.id>
+                                    <img src=@Mov.picture width="115" height="152" />
+                                </button>
+
+                            </form>
+
+                            <br>
+                            <label> @Mov.name</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+
+                        <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+
+                    }
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div>
+
+        <div style="margin-left:2%;margin-top:2%;padding-left:2px;width:100%">
+            <NA: style="color:black; font-family:verdana;  font-size:100%;">
+                <label>WATCHED MOVIES</label>
+            </NA:></br>
+
+
+
+
+            <table>
+                <tr>
+                    @foreach (Movie1 Mov in ViewBag.Movie1 ?? new List<Movie1>())
+                    {
+
+
+                        <td>
+                            <form method="post" action="../Home/MovieDetail">
+
+
+                                <button type="submit" id='id' name='id' value=@Mov.id>
+                                    <img src=@Mov.picture width="115" height="152" />
+                                </button>
+
+                            </form>
+
+                            <br>
+                            <label> @Mov.name</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+
+                        <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+
+                    }
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div>
+
+        <div style="margin-left:2%;margin-top:2%;padding-left:2px;width:100%">
+            <NA: style="color:black; font-family:verdana;  font-size:100%;">
+                <label>WATCH LATER</label>
+            </NA:></br>
+
+
+
+
+            <table>
+                <tr>
+                    @foreach (Movie2 Mov in ViewBag.Movie2 ?? new List<Movie2>())
+                    {
+
+
+                        <td>
+                            <form method="post" action="../Home/MovieDetail">
+
+
+                                <button type="submit" id='id' name='id' value=@Mov.id>
+                                    <img src=@Mov.picture width="115" height="152" />
+                                </button>
+
+                            </form>
+
+                            <br>
+                            <label> @Mov.name</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+
+                        <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+
+                    }
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

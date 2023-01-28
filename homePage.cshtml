@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using db_connectivity.Models;
+@model List<Member>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>homePage</title>
+</head>
+<body>
+    <div>
+
+        <table border="1">
+            <thead><tr><td>Member ID</td> <td>Name</td><td>Password</td> <td>Age</td><td>Gender</td><td>Is_critic</td><td>First_choice</td><td>Second_choice</td></tr></thead>
+
+            @foreach (Member user in Model)
+            {
+                <tr>
+                     <td>@user.Id</td>
+                     <td>@user.name</td>
+                     <td>@user.password</td>
+                     <td>@user.age</td>
+                     <td>@user.gender</td>
+                     <td>@user.iscritic</td>
+                     <td>@user.firstchoice</td>
+                     <td>@user.secondchoice</td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+@model  string
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Signup</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("https://scontent.flhe7-1.fna.fbcdn.net/v/t1.0-9/98030146_669817823862658_8539712959587287040_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_ohc=UthIFnG5OD0AX_9tFCI&_nc_ht=scontent.flhe7-1.fna&oh=7668e109e8097b0beade9d9ec5a8f6b7&oe=5EE531F9");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 300px;
+        }
+    </style>
+    </br>
+
+    <div style="margin-left:75%;padding-top:5px;padding-left:30px; margin-top:12%;width:30%">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+
+        <NA: style="color:black; font-family:verdana;  font-size:200%;">
+            <label>SIGN-UP </label> &nbsp;&nbsp;&nbsp
+        </NA:>
+        <br />
+        <br />
+        <br />
+
+        <div>
+            <form method="post" action="../Home/authenticate1">
+                <input placeholder="Member Id" id="userId" name="id" />
+                <br />
+                <input placeholder="name" id="name" name="name" />
+                <br />
+                <input placeholder="Password" id="password" name="password" />
+                <br />
+                <input placeholder="Age" id="Age" name="age" />
+                <br />
+                <input placeholder="gender" id="gender" name="gender" />
+                <br />
+                <input placeholder="iscritic" id="iscritic" name="iscritic" />
+                <br />
+                <input placeholder="firstchoice" id="firstchoice" name="firstchoice" />
+                <br />
+                <input placeholder="secondchoice" id="secondchoice" name="secondchoice" />
+                <br />
+                <input placeholder="pic" id="pic" name="pic" />
+                <br />
+                <input type="submit" value="Signup" />  &nbsp;&nbsp;&nbsp; <label>@Model</label>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

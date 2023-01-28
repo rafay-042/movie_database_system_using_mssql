@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+@model  string
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("https://scontent.flhe3-1.fna.fbcdn.net/v/t1.0-9/87062043_616404372537337_5242899189913878528_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=INPUYqYEf9UAX8LCaqm&_nc_ht=scontent.flhe3-1.fna&oh=b4aef105c45234c12dabd53cbf62567e&oe=5ED78084");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 300px;
+        }
+    </style>
+    </br>
+
+    <div style="margin-left:70%;padding-top:5px;padding-left:30px; margin-top:12%;width:30%">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+
+        <NA: style="color:black; font-family:verdana;  font-size:250%;">
+            <label>LOGIN </label> &nbsp;&nbsp;&nbsp
+        </NA:>
+        <br />
+        <br />
+        <br />
+
+        <form method="post" action="../Home/authenticate">
+            <label> USR -ID : </label> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp
+            <Name: style="color:blue;"></Name:>
+            <input placeholder="Member Id" id="memberId" name="Id" />
+            <br />
+            <label> PASSWORD : </label>
+            <input type="password" id="password" name="password" />
+            <br />
+            <br />
+            <br />
+            <input style="background-color: blue; border: none; color: white; padding: 4px 8px; text-decoration: none;  margin: 2px 1px; cursor: pointer" type="submit" value="Login" />  &nbsp;&nbsp;&nbsp; <label>@Model</label>
+            <br />
+            <br />
+        </form>
+        <form method="post" action="../Home/redi">
+            <label> Dont have any account?:</label><input style="background-color: blue; border: none; color: white; padding: 4px 8px; text-decoration: none;  margin: 2px 1px; cursor: pointer" type="submit" value="Signup" />  &nbsp;&nbsp;&nbsp; <label>@Model</label>
+            <br />
+            <br />
+        </form>
+
+    </div>
+</body>
+</html>

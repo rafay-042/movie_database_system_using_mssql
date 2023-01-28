@@ -1,0 +1,168 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using db_connectivity.Models;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>homePage</title>
+</head>
+<body>
+
+    <style>
+        body {
+            background-image: url("https://scontent.flhe7-1.fna.fbcdn.net/v/t1.0-9/97947229_669669167210857_2303460092638396416_o.jpg?_nc_cat=105&_nc_sid=730e14&_nc_ohc=BNp7hryRgQ0AX_RkdQK&_nc_ht=scontent.flhe7-1.fna&oh=0ca9bc3db5c0076dc2f9f29b777a0dad&oe=5EE3D5F9");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 300px;
+        }
+    </style>
+    </br>
+
+
+
+
+
+
+
+    <div>
+
+        <div style="margin-left:15%;margin-top:0%;padding-left:30px;width:100%">
+            <table>
+                <tr>
+
+
+                    <td>
+                        <form method="post" action="../Home/authenticate2">
+                            <name:s style="color:blue"></name:s>
+                            <input style="background-color: white; border: none; color: black; border-color: blue; padding: 4px 8px; background-image: url('searchicon.png'); text-decoration: none; margin: 2px 1px; cursor: pointer; " placeholder="Search" id="name" name="name" />
+                            <input style="background-color: blue; border: none; color: white; padding: 4px 8px; text-decoration: none;  margin: 2px 1px; cursor: pointer" type="submit" value="Search" />
+                        </form>
+                    </td>
+                    <td>
+                        &nbsp
+                    </td>
+                    <td>
+                        <form method="post" action="../Home/homere">
+                            <input style="background-color: blue; border: none; color: white; padding: 4px 8px; text-decoration: none;  margin: 2px 1px; cursor: pointer" type="submit" value="Home" />
+                        </form>
+
+                    </td>
+
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                    @foreach (User user in ViewBag.User ?? new List<User>())
+                    {
+
+                        <td>
+
+                            <form method="post" action="../Home/userDetail">
+                                <NA: style="color:black; font-family:verdana;  font-size:200%;">
+
+                                    <label> @user.name </label>
+                                </NA:>
+
+
+                                <NA: style="color:white; font-family:verdana;  font-size:200%;">
+                                    <input type="image" img src=@user.pic alt="Submit" height="50" width="50">
+                                </NA:>
+                            </form>
+
+                        </td>
+                    }
+
+
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div>
+
+
+
+        <div style="margin-left:2%;margin-top:5%;padding-left:30px;width:90%">
+            <label>Enter Your Review</label>
+            </br>
+
+            @foreach (Movie Mov in ViewBag.Movie ?? new List<Movie>())
+
+            {
+                <form method="post" action="../Home/reviewadd">
+
+
+                    <input style="background-color: white; border: none; color: black; border-color: blue; padding: 4px 8px; background-image: url('searchicon.png'); text-decoration: none; margin: 2px 1px; cursor: pointer; " placeholder="Comments" id="rev" name="rev" />
+                    <input style="background-color: white; border: none; color: black; border-color: blue; padding: 4px 8px; background-image: url('searchicon.png'); text-decoration: none; margin: 2px 1px; cursor: pointer; " placeholder="Rating /10" id="rat" name="rat" />
+                    <input style="background-color: blue; border: none; color: white; padding: 4px 8px; text-decoration: none;  margin: 2px 1px; cursor: pointer" type="submit" value=@Mov.id id="mid" name="mid" />
+                    
+                </form>
+                <form method="post" action="../Home/reviewdel">
+                    <label>Delete Review</label>
+                    <input style="background-color: blue; border: none; color: white; padding: 4px 8px; text-decoration: none;  margin: 2px 1px; cursor: pointer" type="submit" value=@Mov.id id="mid" name="mid" />
+                </form>
+            }
+                </br>
+                </br>
+
+                <NA: style="color:black; font-family:verdana;  font-size:150%;">
+                    <label> Reviews</label>
+                    </br>
+                    <table>
+
+                        @foreach (review rev in ViewBag.review ?? new List<review>())
+                        {
+
+
+                            <tr>
+
+
+                                <td>
+                                    <label> @rev.name </label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                                </td>
+
+
+
+                                <td>
+                                    <label> @rev.comments </label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+
+
+
+                                <td>
+                                    <label> @rev.rating </label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+
+                            </tr>
+
+                        }
+                    </table>
+                    </NA>
+
+
+            </div>
+
+
+
+
+    </div>
+</body>
+</html>

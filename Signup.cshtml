@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+@model  string
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Signup</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="../Home/authenticate1">
+            <input placeholder="Member Id" id="userId" name="Id" />
+            <br />
+             <input placeholder="name" id="name" name="name" />
+            <br />
+            <input placeholder="Password" id="password" name="password" />
+            <br />
+            <input placeholder="Age" id="Age" name="age" />
+            <br />
+            <input placeholder="gender" id="gender" name="gender" />
+            <br />
+            <input placeholder="iscritic" id="iscritic" name="iscritic" />
+            <br />
+            <input placeholder="firstchoice" id="firstchoice" name="firstchoice" />
+            <br />
+            <input placeholder="secondchoice" id="secondchoice" name="secondchoice" />
+            <br />
+
+            <input type="submit" value="Signup" />  &nbsp;&nbsp;&nbsp; <label>@Model</label>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using db_connectivity.Models;
+@model User
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>homePage</title>
+</head>
+<body>
+    <div>
+
+        <table border="1">
+            <thead><tr><td>User ID</td> <td>Password</td> <td>Date of Birth</td></tr></thead>
+            
+         
+                <tr>
+
+                    @{User user= (User) Model;
+                    <td>@user.userId</td>
+                    <td>@user.password</td>
+                    <td>@user.dateOfBirth</td>
+                        
+                    }
+                </tr>
+            
+
+        </table>
+
+    </div>
+</body>
+</html>
